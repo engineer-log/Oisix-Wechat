@@ -10,7 +10,7 @@ public class tag {
   public static void main(String[] args) {
     System.out.println("===== HTTP POST Start =====");
     try {
-      URL url = new URL("https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging?access_token=0o3qoJevBULk9qdABLkK611gtNTReZaKuRkji4nwKJCwN8T1R14Im6yzERKy2A2W-0ys8jjYb4_GqKtHQiKULB1JdtT9sUCx5YlcpY8zCa0UFBeADAHSO");
+      URL url = new URL("https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging?access_token=アクセストークン");
       HttpURLConnection connection = null;
       try {
         connection = (HttpURLConnection) url.openConnection();
@@ -19,7 +19,7 @@ public class tag {
         connection.setRequestProperty("Content-Type", "application/json; charset=utf-8");
 
         //JSON形式の文字列に変換する。
-        String json = "{\"openid_list\":[\"owRRb0iMN1rLbEGQpEMBBPQnNIbQ\"],\"tagid\":100}";
+        String json = "{\"openid_list\":[\"OpenID\"],\"tagid\":タグID}";
         PrintStream ps = new PrintStream(connection.getOutputStream());
         ps.print(json);
         ps.close();
